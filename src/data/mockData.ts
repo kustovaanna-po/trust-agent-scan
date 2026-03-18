@@ -122,7 +122,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R09", name: "Ошибки в расчётах", level: "medium",
-    departments: ["УОР"],
+    departments: ["Оп.риски"],
     verdict: "Неточности при расчёте сложных тарифов",
     probability: 50, impact: 60,
     reasoning: "Модель допускает ошибки при мультивалютных расчётах и сложных тарифных планах.",
