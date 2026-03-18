@@ -170,7 +170,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R15", name: "Нарушение compliance", level: "low",
-    departments: ["УОР", "ДТН"],
+    departments: ["Оп.риски", "Надежность"],
     verdict: "Основные compliance требования выполнены",
     probability: 15, impact: 85,
     reasoning: "Регуляторные требования в основном выполняются, minor gaps в документации.",
