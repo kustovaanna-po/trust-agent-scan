@@ -43,7 +43,7 @@ export interface VersionHistory {
 }
 
 export const agent = {
-  name: "Customer Support AI v3.1",
+  name: "Агент поддержки пользователей",
   id: "AGT-2024-00157",
   owner: "Иванов А.С.",
   version: "3.1",
