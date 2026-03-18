@@ -1,12 +1,12 @@
-import { useState } from "react";
 import { actionItems, departmentAssessments } from "@/data/mockData";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { CheckCircle2, Clock, XCircle } from "lucide-react";
+import { CheckCircle2, Clock } from "lucide-react";
 
 export function ActionPanel() {
-  const [ownerStatus, setOwnerStatus] = useState<"pending" | "confirmed" | "rejected">("pending");
+  const confirmed = actionItems.filter((a) => a.confirmed);
+  const proposed = actionItems.filter((a) => !a.confirmed);
   const confirmed = actionItems.filter((a) => a.confirmed);
   const proposed = actionItems.filter((a) => !a.confirmed);
 
