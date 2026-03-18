@@ -98,7 +98,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R06", name: "Токсичный контент", level: "medium",
-    departments: ["УОР", "AI Red Team"],
+    departments: ["Оп.риски", "Кибербезопасность"],
     verdict: "Фильтры пропускают 3% пограничного контента",
     probability: 35, impact: 65,
     reasoning: "Content safety фильтры работают хорошо для явного контента, но пропускают subtle toxicity и сарказм.",
