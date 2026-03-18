@@ -11,13 +11,13 @@ export default function Index() {
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex flex-col gap-6">
         <Header />
         <IntegralRiskCard />
-        <DepartmentAssessments />
 
         <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
           <RisksList />
           <ActionPanel />
         </div>
 
+        <DepartmentAssessments />
         <HistorySection />
       </div>
     </div>

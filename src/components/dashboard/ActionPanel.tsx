@@ -30,7 +30,7 @@ export function ActionPanel() {
         <h3 className="font-semibold text-foreground mb-3">Подтверждения подразделений</h3>
         <div className="flex flex-col gap-2">
           {departmentAssessments.map((d) => (
-            <Button key={d.name} variant={d.confirmed ? "outline" : "default"} size="sm" disabled={d.confirmed} className="justify-start">
+            <Button key={d.name} variant="outline" size="sm" disabled={d.confirmed} className="justify-start">
               {d.confirmed ? <CheckCircle2 className="h-4 w-4 mr-1.5 text-risk-low" /> : <Clock className="h-4 w-4 mr-1.5" />}
               {d.confirmed ? `${d.name} подтверждено` : `Подтвердить ${d.name}`}
             </Button>

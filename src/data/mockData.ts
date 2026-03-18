@@ -204,17 +204,17 @@ export const risks: Risk[] = [
 
 export const departmentAssessments: DepartmentAssessment[] = [
   {
-    name: "УОР", fullName: "Управление операционных рисков",
+    name: "Оп.риски", fullName: "Управление операционных рисков",
     level: "medium", risksAssessed: 8, totalRisks: 18, confirmed: true,
     riskIds: ["R01", "R03", "R06", "R07", "R09", "R10", "R13", "R15", "R16", "R18"],
   },
   {
-    name: "ДТН", fullName: "Дирекция технологической надёжности",
+    name: "Надежность", fullName: "Дирекция технологической надёжности",
     level: "low", risksAssessed: 6, totalRisks: 18, confirmed: false,
     riskIds: ["R02", "R05", "R07", "R11", "R12", "R15", "R16"],
   },
   {
-    name: "AI Red Team", fullName: "Кибербезопасность / AI Red Team",
+    name: "Кибербезопасность", fullName: "Кибербезопасность / AI Red Team",
     level: "high", risksAssessed: 10, totalRisks: 18, confirmed: false,
     riskIds: ["R01", "R02", "R04", "R06", "R08", "R10", "R14", "R17"],
   },
