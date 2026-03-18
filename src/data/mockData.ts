@@ -74,7 +74,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R03", name: "Предвзятость", level: "low",
-    departments: ["УОР"],
+    departments: ["Оп.риски"],
     verdict: "Минимальная предвзятость по демографическим группам",
     probability: 15, impact: 60,
     reasoning: "Аудит bias выявил незначительные отклонения, все метрики в пределах допустимого порога.",
