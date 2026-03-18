@@ -7,8 +7,6 @@ import { CheckCircle2, Clock } from "lucide-react";
 export function ActionPanel() {
   const confirmed = actionItems.filter((a) => a.confirmed);
   const proposed = actionItems.filter((a) => !a.confirmed);
-  const confirmed = actionItems.filter((a) => a.confirmed);
-  const proposed = actionItems.filter((a) => !a.confirmed);
 
   return (
     <div className="flex flex-col gap-4">
