@@ -1,5 +1,5 @@
 export type RiskLevel = "low" | "medium" | "high";
-export type Department = "УОР" | "ДТН" | "AI Red Team";
+export type Department = "Оп.риски" | "Надежность" | "Кибербезопасность";
 export type AssessmentStatus = "approved" | "in_progress" | "arbitration" | "pending";
 export type ConfirmationStatus = "confirmed" | "pending" | "rejected";
 
