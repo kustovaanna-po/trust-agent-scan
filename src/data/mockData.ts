@@ -82,7 +82,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R04", name: "Prompt Injection", level: "high",
-    departments: ["AI Red Team"],
+    departments: ["Кибербезопасность"],
     verdict: "Успешные атаки в 12% тестовых сценариев",
     probability: 65, impact: 80,
     reasoning: "Red team выявил уязвимости к прямым и косвенным prompt injection атакам, включая jailbreak через multi-turn диалоги.",
