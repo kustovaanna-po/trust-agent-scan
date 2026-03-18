@@ -146,7 +146,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R12", name: "Недоступность сервиса", level: "low",
-    departments: ["ДТН"],
+    departments: ["Надежность"],
     verdict: "SLA 99.9% выполняется",
     probability: 5, impact: 80,
     reasoning: "Резервирование и geo-distribution обеспечивают высокую доступность.",
