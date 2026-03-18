@@ -178,7 +178,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R16", name: "Деградация качества", level: "medium",
-    departments: ["УОР", "ДТН"],
+    departments: ["Оп.риски", "Надежность"],
     verdict: "Drift модели детектируется с задержкой",
     probability: 40, impact: 55,
     reasoning: "Система мониторинга quality drift требует оптимизации — задержка обнаружения до 48 часов.",
