@@ -19,7 +19,11 @@ export function Header() {
           </div>
         </div>
       </div>
-      <Badge variant="outline" className="w-fit border-risk-low bg-risk-low-bg text-risk-low font-medium px-3 py-1">
+      <Badge variant="outline" className={`w-fit font-medium px-3 py-1 ${
+        agent.status === "approved" ? "border-risk-low bg-risk-low-bg text-risk-low" :
+        agent.status === "in_progress" ? "border-risk-medium bg-risk-medium-bg text-risk-medium" :
+        "border-risk-high bg-risk-high-bg text-risk-high"
+      }`}>
         {statusLabel[agent.status]}
       </Badge>
     </header>

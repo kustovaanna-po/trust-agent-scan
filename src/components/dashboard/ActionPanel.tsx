@@ -1,30 +1,15 @@
-import { useState } from "react";
 import { actionItems, departmentAssessments } from "@/data/mockData";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { CheckCircle2, Clock, XCircle } from "lucide-react";
+import { CheckCircle2, Clock } from "lucide-react";
 
 export function ActionPanel() {
-  const [ownerStatus, setOwnerStatus] = useState<"pending" | "confirmed" | "rejected">("pending");
   const confirmed = actionItems.filter((a) => a.confirmed);
   const proposed = actionItems.filter((a) => !a.confirmed);
 
   return (
     <div className="flex flex-col gap-4">
-      {/* Owner confirmation */}
-      <Card className="p-5">
-        <h3 className="font-semibold text-foreground mb-3">Подтверждение владельца</h3>
-        <div className="flex items-center gap-2 mb-4 text-sm">
-          {ownerStatus === "confirmed" && <><CheckCircle2 className="h-4 w-4 text-risk-low" /> <span className="text-risk-low font-medium">Подтверждено</span></>}
-          {ownerStatus === "pending" && <><Clock className="h-4 w-4 text-risk-medium" /> <span className="text-risk-medium font-medium">Ожидает</span></>}
-          {ownerStatus === "rejected" && <><XCircle className="h-4 w-4 text-risk-high" /> <span className="text-risk-high font-medium">Отклонено</span></>}
-        </div>
-        <Button className="w-full" size="lg" onClick={() => setOwnerStatus("confirmed")}>
-          Принять риск / Подтвердить оценку
-        </Button>
-      </Card>
-
       {/* Department confirmations */}
       <Card className="p-5">
         <h3 className="font-semibold text-foreground mb-3">Подтверждения подразделений</h3>
