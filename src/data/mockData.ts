@@ -194,7 +194,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R18", name: "Репутационные риски", level: "low",
-    departments: ["УОР"],
+    departments: ["Оп.риски"],
     verdict: "Низкий риск при текущем уровне контроля",
     probability: 18, impact: 90,
     reasoning: "Контент-фильтры и мониторинг минимизируют вероятность репутационных инцидентов.",
