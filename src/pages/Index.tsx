@@ -18,6 +18,7 @@ export default function Index() {
         </div>
 
         <DepartmentAssessments />
+
         <HistorySection />
       </div>
     </div>

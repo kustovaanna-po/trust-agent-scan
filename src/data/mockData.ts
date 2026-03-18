@@ -48,7 +48,7 @@ export const agent = {
   owner: "Иванов А.С.",
   version: "3.1",
   lastAssessment: "2024-12-15",
-  status: "approved" as AssessmentStatus,
+  status: "in_progress" as AssessmentStatus,
 };
 
 export const risks: Risk[] = [
