@@ -186,7 +186,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R17", name: "Обход ограничений модели", level: "high",
-    departments: ["AI Red Team"],
+    departments: ["Кибербезопасность"],
     verdict: "Jailbreak успешен в 7% попыток",
     probability: 58, impact: 75,
     reasoning: "Сложные multi-step jailbreak атаки позволяют обойти ограничения модели.",
