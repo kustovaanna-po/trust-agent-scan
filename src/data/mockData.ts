@@ -114,7 +114,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R08", name: "Неконтролируемое поведение", level: "low",
-    departments: ["AI Red Team"],
+    departments: ["Кибербезопасность"],
     verdict: "Модель следует guardrails в 98% случаев",
     probability: 12, impact: 55,
     reasoning: "Guardrails эффективны. Edge-case сценарии покрыты fallback механизмами.",
