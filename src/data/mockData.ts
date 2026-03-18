@@ -154,7 +154,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R13", name: "Некорректная эскалация", level: "medium",
-    departments: ["УОР"],
+    departments: ["Оп.риски"],
     verdict: "15% обращений эскалируются некорректно",
     probability: 55, impact: 45,
     reasoning: "Модель эскалации требует доработки — часть обращений передаётся не в то подразделение.",
