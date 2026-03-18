@@ -90,7 +90,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R05", name: "Отказ в обслуживании", level: "low",
-    departments: ["ДТН"],
+    departments: ["Надежность"],
     verdict: "Система стабильна при пиковых нагрузках",
     probability: 10, impact: 70,
     reasoning: "Нагрузочное тестирование подтвердило устойчивость при 10x пиковой нагрузке. Auto-scaling настроен корректно.",
