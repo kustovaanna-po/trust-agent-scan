@@ -162,7 +162,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R14", name: "Извлечение системного промпта", level: "high",
-    departments: ["AI Red Team"],
+    departments: ["Кибербезопасность"],
     verdict: "Системный промпт частично извлекаем",
     probability: 60, impact: 55,
     reasoning: "Red team смог извлечь фрагменты системного промпта через специальные техники.",
