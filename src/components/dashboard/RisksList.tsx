@@ -16,9 +16,9 @@ const levelFilters: { label: string; value: RiskLevel | "all" }[] = [
 
 const deptFilters: { label: string; value: Department | "all" }[] = [
   { label: "Все", value: "all" },
-  { label: "УОР", value: "УОР" },
-  { label: "ДТН", value: "ДТН" },
-  { label: "AI Red Team", value: "AI Red Team" },
+  { label: "Оп.риски", value: "Оп.риски" },
+  { label: "Надежность", value: "Надежность" },
+  { label: "Кибербезопасность", value: "Кибербезопасность" },
 ];
 
 const borderLeft: Record<RiskLevel, string> = {

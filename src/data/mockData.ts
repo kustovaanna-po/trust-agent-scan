@@ -1,5 +1,5 @@
 export type RiskLevel = "low" | "medium" | "high";
-export type Department = "УОР" | "ДТН" | "AI Red Team";
+export type Department = "Оп.риски" | "Надежность" | "Кибербезопасность";
 export type AssessmentStatus = "approved" | "in_progress" | "arbitration" | "pending";
 export type ConfirmationStatus = "confirmed" | "pending" | "rejected";
 
@@ -54,7 +54,7 @@ export const agent = {
 export const risks: Risk[] = [
   {
     id: "R01", name: "Галлюцинации", level: "high",
-    departments: ["УОР", "AI Red Team"],
+    departments: ["Оп.риски", "Кибербезопасность"],
     verdict: "Модель генерирует недостоверные факты в 8% обращений",
     probability: 72, impact: 85,
     reasoning: "Анализ 50 000 диалогов выявил систематическое генерирование недостоверной информации о продуктах и тарифах. Особенно критично при обсуждении юридических условий договоров.",
@@ -66,7 +66,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R02", name: "Утечка данных", level: "medium",
-    departments: ["ДТН", "AI Red Team"],
+    departments: ["Надежность", "Кибербезопасность"],
     verdict: "Обнаружены потенциальные векторы извлечения PII",
     probability: 45, impact: 90,
     reasoning: "При стресс-тестировании модель в ряде случаев раскрывала фрагменты персональных данных из контекста. Риск частично митигирован фильтрами.",
@@ -74,7 +74,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R03", name: "Предвзятость", level: "low",
-    departments: ["УОР"],
+    departments: ["Оп.риски"],
     verdict: "Минимальная предвзятость по демографическим группам",
     probability: 15, impact: 60,
     reasoning: "Аудит bias выявил незначительные отклонения, все метрики в пределах допустимого порога.",
@@ -82,7 +82,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R04", name: "Prompt Injection", level: "high",
-    departments: ["AI Red Team"],
+    departments: ["Кибербезопасность"],
     verdict: "Успешные атаки в 12% тестовых сценариев",
     probability: 65, impact: 80,
     reasoning: "Red team выявил уязвимости к прямым и косвенным prompt injection атакам, включая jailbreak через multi-turn диалоги.",
@@ -90,7 +90,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R05", name: "Отказ в обслуживании", level: "low",
-    departments: ["ДТН"],
+    departments: ["Надежность"],
     verdict: "Система стабильна при пиковых нагрузках",
     probability: 10, impact: 70,
     reasoning: "Нагрузочное тестирование подтвердило устойчивость при 10x пиковой нагрузке. Auto-scaling настроен корректно.",
@@ -98,7 +98,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R06", name: "Токсичный контент", level: "medium",
-    departments: ["УОР", "AI Red Team"],
+    departments: ["Оп.риски", "Кибербезопасность"],
     verdict: "Фильтры пропускают 3% пограничного контента",
     probability: 35, impact: 65,
     reasoning: "Content safety фильтры работают хорошо для явного контента, но пропускают subtle toxicity и сарказм.",
@@ -106,7 +106,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R07", name: "Нарушение приватности", level: "medium",
-    departments: ["ДТН", "УОР"],
+    departments: ["Надежность", "Оп.риски"],
     verdict: "Частичное соответствие политикам обработки данных",
     probability: 40, impact: 75,
     reasoning: "Модель обрабатывает данные в соответствии с основными политиками, однако выявлены пробелы в обработке специальных категорий данных.",
@@ -114,7 +114,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R08", name: "Неконтролируемое поведение", level: "low",
-    departments: ["AI Red Team"],
+    departments: ["Кибербезопасность"],
     verdict: "Модель следует guardrails в 98% случаев",
     probability: 12, impact: 55,
     reasoning: "Guardrails эффективны. Edge-case сценарии покрыты fallback механизмами.",
@@ -122,7 +122,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R09", name: "Ошибки в расчётах", level: "medium",
-    departments: ["УОР"],
+    departments: ["Оп.риски"],
     verdict: "Неточности при расчёте сложных тарифов",
     probability: 50, impact: 60,
     reasoning: "Модель допускает ошибки при мультивалютных расчётах и сложных тарифных планах.",
@@ -130,7 +130,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R10", name: "Манипуляция пользователем", level: "low",
-    departments: ["УОР", "AI Red Team"],
+    departments: ["Оп.риски", "Кибербезопасность"],
     verdict: "Минимальный риск манипулятивного поведения",
     probability: 8, impact: 70,
     reasoning: "Тестирование не выявило систематического манипулятивного поведения.",
@@ -138,7 +138,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R11", name: "Зависимость от поставщика", level: "low",
-    departments: ["ДТН"],
+    departments: ["Надежность"],
     verdict: "Мультимодельная архитектура снижает зависимость",
     probability: 20, impact: 50,
     reasoning: "Архитектура поддерживает несколько LLM провайдеров с автоматическим переключением.",
@@ -146,7 +146,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R12", name: "Недоступность сервиса", level: "low",
-    departments: ["ДТН"],
+    departments: ["Надежность"],
     verdict: "SLA 99.9% выполняется",
     probability: 5, impact: 80,
     reasoning: "Резервирование и geo-distribution обеспечивают высокую доступность.",
@@ -154,7 +154,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R13", name: "Некорректная эскалация", level: "medium",
-    departments: ["УОР"],
+    departments: ["Оп.риски"],
     verdict: "15% обращений эскалируются некорректно",
     probability: 55, impact: 45,
     reasoning: "Модель эскалации требует доработки — часть обращений передаётся не в то подразделение.",
@@ -162,7 +162,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R14", name: "Извлечение системного промпта", level: "high",
-    departments: ["AI Red Team"],
+    departments: ["Кибербезопасность"],
     verdict: "Системный промпт частично извлекаем",
     probability: 60, impact: 55,
     reasoning: "Red team смог извлечь фрагменты системного промпта через специальные техники.",
@@ -170,7 +170,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R15", name: "Нарушение compliance", level: "low",
-    departments: ["УОР", "ДТН"],
+    departments: ["Оп.риски", "Надежность"],
     verdict: "Основные compliance требования выполнены",
     probability: 15, impact: 85,
     reasoning: "Регуляторные требования в основном выполняются, minor gaps в документации.",
@@ -178,7 +178,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R16", name: "Деградация качества", level: "medium",
-    departments: ["УОР", "ДТН"],
+    departments: ["Оп.риски", "Надежность"],
     verdict: "Drift модели детектируется с задержкой",
     probability: 40, impact: 55,
     reasoning: "Система мониторинга quality drift требует оптимизации — задержка обнаружения до 48 часов.",
@@ -186,7 +186,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R17", name: "Обход ограничений модели", level: "high",
-    departments: ["AI Red Team"],
+    departments: ["Кибербезопасность"],
     verdict: "Jailbreak успешен в 7% попыток",
     probability: 58, impact: 75,
     reasoning: "Сложные multi-step jailbreak атаки позволяют обойти ограничения модели.",
@@ -194,7 +194,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R18", name: "Репутационные риски", level: "low",
-    departments: ["УОР"],
+    departments: ["Оп.риски"],
     verdict: "Низкий риск при текущем уровне контроля",
     probability: 18, impact: 90,
     reasoning: "Контент-фильтры и мониторинг минимизируют вероятность репутационных инцидентов.",
@@ -204,17 +204,17 @@ export const risks: Risk[] = [
 
 export const departmentAssessments: DepartmentAssessment[] = [
   {
-    name: "УОР", fullName: "Управление операционных рисков",
+    name: "Оп.риски", fullName: "Управление операционных рисков",
     level: "medium", risksAssessed: 8, totalRisks: 18, confirmed: true,
     riskIds: ["R01", "R03", "R06", "R07", "R09", "R10", "R13", "R15", "R16", "R18"],
   },
   {
-    name: "ДТН", fullName: "Дирекция технологической надёжности",
+    name: "Надежность", fullName: "Дирекция технологической надёжности",
     level: "low", risksAssessed: 6, totalRisks: 18, confirmed: false,
     riskIds: ["R02", "R05", "R07", "R11", "R12", "R15", "R16"],
   },
   {
-    name: "AI Red Team", fullName: "Кибербезопасность / AI Red Team",
+    name: "Кибербезопасность", fullName: "Кибербезопасность / AI Red Team",
     level: "high", risksAssessed: 10, totalRisks: 18, confirmed: false,
     riskIds: ["R01", "R02", "R04", "R06", "R08", "R10", "R14", "R17"],
   },
