@@ -130,7 +130,7 @@ export const risks: Risk[] = [
   },
   {
     id: "R10", name: "Манипуляция пользователем", level: "low",
-    departments: ["УОР", "AI Red Team"],
+    departments: ["Оп.риски", "Кибербезопасность"],
     verdict: "Минимальный риск манипулятивного поведения",
     probability: 8, impact: 70,
     reasoning: "Тестирование не выявило систематического манипулятивного поведения.",
