@@ -21,7 +21,7 @@ const App = () => (
       <Sonner />
       {/* LOVABLE_KEEP_START */}
       <BrowserRouter basename={basename}>
-      {/* LOVABLE_KEEP_END */}     
+      {/* LOVABLE_KEEP_END */}
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
