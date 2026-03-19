@@ -44,24 +44,27 @@ export function RisksList() {
           <Filter className="h-4 w-4 text-muted-foreground" />
           18 видов рисков
         </h2>
-        <div className="flex flex-wrap gap-1.5">
-          {levelFilters.map((f) => (
-            <Button
-              key={f.value} size="sm" variant={levelFilter === f.value ? "default" : "outline"}
-              onClick={() => setLevelFilter(f.value)} className="text-xs h-7"
-            >
-              {f.label}
-            </Button>
-          ))}
-          <span className="mx-1 border-l border-border" />
-          {deptFilters.map((f) => (
-            <Button
-              key={f.value} size="sm" variant={deptFilter === f.value ? "default" : "outline"}
-              onClick={() => setDeptFilter(f.value)} className="text-xs h-7"
-            >
-              {f.label}
-            </Button>
-          ))}
+        <div className="flex flex-col gap-1.5">
+          <div className="flex flex-wrap gap-1.5">
+            {levelFilters.map((f) => (
+              <Button
+                key={f.value} size="sm" variant={levelFilter === f.value ? "default" : "outline"}
+                onClick={() => setLevelFilter(f.value)} className="text-xs h-7"
+              >
+                {f.label}
+              </Button>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {deptFilters.map((f) => (
+              <Button
+                key={f.value} size="sm" variant={deptFilter === f.value ? "default" : "outline"}
+                onClick={() => setDeptFilter(f.value)} className="text-xs h-7"
+              >
+                {f.label}
+              </Button>
+            ))}
+          </div>
         </div>
       </div>
 

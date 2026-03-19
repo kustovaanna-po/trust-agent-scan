@@ -13,7 +13,7 @@ export function IntegralRiskCard() {
   const iconMap = { low: "text-risk-low", medium: "text-risk-medium", high: "text-risk-high" } as const;
 
   return (
-    <Card className={`p-6 border-2 ${bgMap[integralLevel]}`}>
+    <Card className="p-6">
       <div className="flex items-center gap-4">
         <div className={`flex h-14 w-14 items-center justify-center rounded-xl bg-card shadow-sm ${iconMap[integralLevel]}`}>
           <ShieldAlert className="h-8 w-8" />
