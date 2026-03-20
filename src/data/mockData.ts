@@ -241,11 +241,11 @@ export const departmentAssessments: DepartmentAssessment[] = [
 ];
 
 export const actionItems: ActionItem[] = [
-  { id: "A1", description: "Обновить базу знаний RAG для снижения галлюцинаций", responsible: "Петров Д.И.", deadline: "2025-01-15", confirmed: true },
-  { id: "A2", description: "Внедрить дополнительные фильтры PII на выходе модели", responsible: "Сидорова К.М.", deadline: "2025-01-20", confirmed: true },
-  { id: "A3", description: "Усилить защиту от prompt injection атак", responsible: "AI Red Team", deadline: "2025-02-01", confirmed: true },
-  { id: "A4", description: "Доработать систему эскалации обращений", responsible: "Козлов В.А.", deadline: "2025-02-15", confirmed: false },
-  { id: "A5", description: "Оптимизировать мониторинг quality drift", responsible: "Николаева Е.П.", deadline: "2025-03-01", confirmed: false },
+  { id: "A1", description: "Обновить базу знаний RAG для снижения галлюцинаций", responsible: "Петров Д.И.", deadline: "2025-01-15", confirmed: true, relatedRiskIds: ["R01"] },
+  { id: "A2", description: "Внедрить дополнительные фильтры PII на выходе модели", responsible: "Сидорова К.М.", deadline: "2025-01-20", confirmed: true, relatedRiskIds: ["R02", "R07"] },
+  { id: "A3", description: "Усилить защиту от prompt injection атак", responsible: "Кибербезопасность", deadline: "2025-02-01", confirmed: true, relatedRiskIds: ["R04", "R17"] },
+  { id: "A4", description: "Доработать систему эскалации обращений", responsible: "Козлов В.А.", deadline: "2025-02-15", confirmed: false, relatedRiskIds: ["R13"] },
+  { id: "A5", description: "Оптимизировать мониторинг quality drift", responsible: "Николаева Е.П.", deadline: "2025-03-01", confirmed: false, relatedRiskIds: ["R16"] },
 ];
 
 export const versionHistory: VersionHistory[] = [
