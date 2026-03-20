@@ -13,6 +13,7 @@ export interface Risk {
   impact: number;
   reasoning: string;
   factors: string[];
+  recommendations?: string[];
   history?: { version: string; level: RiskLevel; date: string }[];
 }
 
