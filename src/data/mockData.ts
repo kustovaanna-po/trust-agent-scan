@@ -33,6 +33,7 @@ export interface ActionItem {
   responsible: string;
   deadline: string;
   confirmed: boolean;
+  relatedRiskIds: string[];
 }
 
 export interface VersionHistory {
