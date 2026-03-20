@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Filter } from "lucide-react";
+import { Filter, Lightbulb } from "lucide-react";
 
 const levelFilters: { label: string; value: RiskLevel | "all" }[] = [
   { label: "Все", value: "all" },
@@ -29,11 +29,9 @@ const borderLeft: Record<RiskLevel, string> = {
 
 export function RisksList() {
   const [levelFilter, setLevelFilter] = useState<RiskLevel | "all">("all");
-  const [deptFilter, setDeptFilter] = useState<Department | "all">("all");
 
   const filtered = risks.filter((r) => {
     if (levelFilter !== "all" && r.level !== levelFilter) return false;
-    if (deptFilter !== "all" && !r.departments.includes(deptFilter)) return false;
     return true;
   });
 
@@ -58,8 +56,9 @@ export function RisksList() {
           <div className="flex flex-wrap gap-1.5">
             {deptFilters.map((f) => (
               <Button
-                key={f.value} size="sm" variant={deptFilter === f.value ? "default" : "outline"}
-                onClick={() => setDeptFilter(f.value)} className="text-xs h-7"
+                key={f.value} size="sm" variant="outline"
+                disabled
+                className="text-xs h-7 opacity-40 cursor-not-allowed"
               >
                 {f.label}
               </Button>
@@ -78,9 +77,6 @@ export function RisksList() {
                   <span className="font-medium text-foreground truncate">{risk.name}</span>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
-                  {risk.departments.map((d) => (
-                    <Badge key={d} variant="secondary" className="text-[10px] px-1.5 py-0">{d}</Badge>
-                  ))}
                   <RiskBadge level={risk.level} size="sm" />
                 </div>
               </div>
@@ -112,6 +108,20 @@ export function RisksList() {
                   ))}
                 </div>
               </div>
+
+              {risk.recommendations && risk.recommendations.length > 0 && (
+                <div className="mt-4">
+                  <p className="text-xs font-medium text-muted-foreground mb-1.5 flex items-center gap-1">
+                    <Lightbulb className="h-3.5 w-3.5" />
+                    Рекомендации
+                  </p>
+                  <ul className="text-sm text-foreground bg-muted rounded-md p-3 list-disc list-inside space-y-1">
+                    {risk.recommendations.map((rec) => (
+                      <li key={rec}>{rec}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               {risk.history && risk.history.length > 0 && (
                 <div className="mt-4">

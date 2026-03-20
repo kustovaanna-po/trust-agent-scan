@@ -7,7 +7,7 @@ import { CheckCircle2, Clock } from "lucide-react";
 
 export function DepartmentAssessments() {
   return (
-    <div className="grid gap-4 md:grid-cols-3">
+    <div className="grid gap-4 md:grid-cols-3 opacity-40 pointer-events-none select-none">
       {departmentAssessments.map((dept) => {
         const deptRisks = risks.filter((r) => dept.riskIds.includes(r.id));
         return (
@@ -43,7 +43,7 @@ export function DepartmentAssessments() {
               variant={dept.confirmed ? "outline" : "default"}
               size="sm"
               className="mt-auto w-full"
-              disabled={dept.confirmed}
+              disabled
             >
               {dept.confirmed ? (
                 <><CheckCircle2 className="h-4 w-4 mr-1.5" /> Подтверждено</>
