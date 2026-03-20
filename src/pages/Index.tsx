@@ -12,10 +12,9 @@ export default function Index() {
         <Header />
         <IntegralRiskCard />
 
-        <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
-          <RisksList />
-          <ActionPanel />
-        </div>
+        <RisksList />
+
+        <ActionPanel />
 
         <DepartmentAssessments />
 
