@@ -61,6 +61,7 @@ export const risks: Risk[] = [
     probability: 72, impact: 85,
     reasoning: "Анализ 50 000 диалогов выявил систематическое генерирование недостоверной информации о продуктах и тарифах. Особенно критично при обсуждении юридических условий договоров.",
     factors: ["Недостаточный RAG", "Устаревшая база знаний", "Сложные продукты"],
+    recommendations: ["Обновить базу знаний RAG для снижения галлюцинаций"],
     history: [
       { version: "3.0", level: "high", date: "2024-11-01" },
       { version: "2.9", level: "high", date: "2024-10-01" },
@@ -73,6 +74,7 @@ export const risks: Risk[] = [
     probability: 45, impact: 90,
     reasoning: "При стресс-тестировании модель в ряде случаев раскрывала фрагменты персональных данных из контекста. Риск частично митигирован фильтрами.",
     factors: ["Контекстное окно", "PII в промптах", "Фильтры вывода"],
+    recommendations: ["Внедрить дополнительные фильтры PII на выходе модели"],
   },
   {
     id: "R03", name: "Предвзятость", level: "low",
@@ -81,6 +83,7 @@ export const risks: Risk[] = [
     probability: 15, impact: 60,
     reasoning: "Аудит bias выявил незначительные отклонения, все метрики в пределах допустимого порога.",
     factors: ["Сбалансированные данные", "Регулярный аудит"],
+    recommendations: ["Продолжить регулярный аудит bias-метрик"],
   },
   {
     id: "R04", name: "Prompt Injection", level: "high",
@@ -89,6 +92,7 @@ export const risks: Risk[] = [
     probability: 65, impact: 80,
     reasoning: "Red team выявил уязвимости к прямым и косвенным prompt injection атакам, включая jailbreak через multi-turn диалоги.",
     factors: ["Прямые инъекции", "Косвенные инъекции", "Multi-turn атаки"],
+    recommendations: ["Усилить защиту от prompt injection атак"],
   },
   {
     id: "R05", name: "Отказ в обслуживании", level: "low",
@@ -97,6 +101,7 @@ export const risks: Risk[] = [
     probability: 10, impact: 70,
     reasoning: "Нагрузочное тестирование подтвердило устойчивость при 10x пиковой нагрузке. Auto-scaling настроен корректно.",
     factors: ["Auto-scaling", "Rate limiting", "Circuit breaker"],
+    recommendations: ["Поддерживать актуальность нагрузочных тестов"],
   },
   {
     id: "R06", name: "Токсичный контент", level: "medium",
@@ -105,6 +110,7 @@ export const risks: Risk[] = [
     probability: 35, impact: 65,
     reasoning: "Content safety фильтры работают хорошо для явного контента, но пропускают subtle toxicity и сарказм.",
     factors: ["Subtle toxicity", "Культурный контекст", "Сарказм"],
+    recommendations: ["Доработать фильтры для выявления subtle toxicity и сарказма"],
   },
   {
     id: "R07", name: "Нарушение приватности", level: "medium",
@@ -113,6 +119,7 @@ export const risks: Risk[] = [
     probability: 40, impact: 75,
     reasoning: "Модель обрабатывает данные в соответствии с основными политиками, однако выявлены пробелы в обработке специальных категорий данных.",
     factors: ["GDPR", "152-ФЗ", "Спец. категории данных"],
+    recommendations: ["Закрыть пробелы в обработке специальных категорий данных"],
   },
   {
     id: "R08", name: "Неконтролируемое поведение", level: "low",
@@ -121,6 +128,7 @@ export const risks: Risk[] = [
     probability: 12, impact: 55,
     reasoning: "Guardrails эффективны. Edge-case сценарии покрыты fallback механизмами.",
     factors: ["Guardrails", "Fallback", "Мониторинг"],
+    recommendations: ["Расширить покрытие edge-case сценариев"],
   },
   {
     id: "R09", name: "Ошибки в расчётах", level: "medium",
@@ -129,6 +137,7 @@ export const risks: Risk[] = [
     probability: 50, impact: 60,
     reasoning: "Модель допускает ошибки при мультивалютных расчётах и сложных тарифных планах.",
     factors: ["Мультивалютность", "Сложные тарифы", "Округление"],
+    recommendations: ["Внедрить валидацию расчётов через внешний калькулятор"],
   },
   {
     id: "R10", name: "Манипуляция пользователем", level: "low",
@@ -137,6 +146,7 @@ export const risks: Risk[] = [
     probability: 8, impact: 70,
     reasoning: "Тестирование не выявило систематического манипулятивного поведения.",
     factors: ["Этические гайдлайны", "Прозрачность"],
+    recommendations: ["Продолжить мониторинг манипулятивных паттернов"],
   },
   {
     id: "R11", name: "Зависимость от поставщика", level: "low",
@@ -145,6 +155,7 @@ export const risks: Risk[] = [
     probability: 20, impact: 50,
     reasoning: "Архитектура поддерживает несколько LLM провайдеров с автоматическим переключением.",
     factors: ["Multi-provider", "Fallback модели"],
+    recommendations: ["Регулярно тестировать переключение между провайдерами"],
   },
   {
     id: "R12", name: "Недоступность сервиса", level: "low",
@@ -153,6 +164,7 @@ export const risks: Risk[] = [
     probability: 5, impact: 80,
     reasoning: "Резервирование и geo-distribution обеспечивают высокую доступность.",
     factors: ["Geo-distribution", "Резервирование", "Мониторинг"],
+    recommendations: ["Поддерживать текущий уровень резервирования"],
   },
   {
     id: "R13", name: "Некорректная эскалация", level: "medium",
@@ -161,6 +173,7 @@ export const risks: Risk[] = [
     probability: 55, impact: 45,
     reasoning: "Модель эскалации требует доработки — часть обращений передаётся не в то подразделение.",
     factors: ["Классификация", "Маршрутизация", "Пороги эскалации"],
+    recommendations: ["Доработать систему эскалации обращений"],
   },
   {
     id: "R14", name: "Извлечение системного промпта", level: "high",
@@ -169,6 +182,7 @@ export const risks: Risk[] = [
     probability: 60, impact: 55,
     reasoning: "Red team смог извлечь фрагменты системного промпта через специальные техники.",
     factors: ["System prompt leakage", "Обфускация"],
+    recommendations: ["Усилить обфускацию системного промпта"],
   },
   {
     id: "R15", name: "Нарушение compliance", level: "low",
@@ -177,6 +191,7 @@ export const risks: Risk[] = [
     probability: 15, impact: 85,
     reasoning: "Регуляторные требования в основном выполняются, minor gaps в документации.",
     factors: ["Регуляторика", "Документация", "Аудит"],
+    recommendations: ["Закрыть gaps в compliance документации"],
   },
   {
     id: "R16", name: "Деградация качества", level: "medium",
@@ -185,6 +200,7 @@ export const risks: Risk[] = [
     probability: 40, impact: 55,
     reasoning: "Система мониторинга quality drift требует оптимизации — задержка обнаружения до 48 часов.",
     factors: ["Model drift", "Мониторинг", "Алертинг"],
+    recommendations: ["Оптимизировать мониторинг quality drift"],
   },
   {
     id: "R17", name: "Обход ограничений модели", level: "high",
@@ -193,6 +209,7 @@ export const risks: Risk[] = [
     probability: 58, impact: 75,
     reasoning: "Сложные multi-step jailbreak атаки позволяют обойти ограничения модели.",
     factors: ["Multi-step jailbreak", "Role-play атаки", "Encoding tricks"],
+    recommendations: ["Внедрить защиту от multi-step jailbreak атак"],
   },
   {
     id: "R18", name: "Репутационные риски", level: "low",
@@ -201,6 +218,7 @@ export const risks: Risk[] = [
     probability: 18, impact: 90,
     reasoning: "Контент-фильтры и мониторинг минимизируют вероятность репутационных инцидентов.",
     factors: ["PR мониторинг", "Контент-фильтры", "Реагирование"],
+    recommendations: ["Поддерживать текущий уровень контент-фильтрации"],
   },
 ];
 
